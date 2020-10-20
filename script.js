@@ -21,7 +21,6 @@ lowerCase:["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","
 // Write password to the #password input
 function writePassword() {
 
-
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
@@ -40,10 +39,15 @@ function generatePassword(){
     var booleanChar = userChoiceBoolean("Special Characters");
     var booleanUpper = userChoiceBoolean("Uppercase Letters");
     var booleanLower = userChoiceBoolean("Lowercase Letters");
+    //console.log(boolNum)
+    //console.log(boolChar)
+    //console.log(boolUpper)
+    //console.log(boolLower)
 
     var strongPassword = " ";//store password here then return it 
-    //put the password together using while 
+    //put the password together while password is less then or equals to lenght of user choice 
     while(strongPassword.length <= passwordLength){
+      //ramdom order of num,char,lower and upper case letters
       var randomOrder = Math.floor(Math.random() * Object.keys(passwordRequirements).length);
       switch (randomOrder) {
         case 0://numbers
@@ -60,7 +64,7 @@ function generatePassword(){
           break;  
       }
     }
-      console.log(strongPassword);
+      //console.log(strongPassword); for de bug
       return strongPassword;
   }
 

@@ -60,6 +60,9 @@ THEN the password is either displayed in an alert or written to the page
     * Example I move variables to functions so the password could reset when ever pressing button 
 
 ## JavaScript-Images
+![JS](https://github.com/Tuzosdaniel12/PasswordGenerator/blob/main/Assets/images/js-01.png)
+![JS](https://github.com/Tuzosdaniel12/PasswordGenerator/blob/main/Assets/images/js-02.png)
+![JS](https://github.com/Tuzosdaniel12/PasswordGenerator/blob/main/Assets/images/js-03.png)
 
 ## Links
 * Website

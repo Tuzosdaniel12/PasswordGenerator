@@ -2,7 +2,8 @@
 var generateBtn = document.querySelector("#generate");
 
 // global variables 
-var strongPassword;
+var strongPassword = "";
+console.log(strongPassword.length)
 // object that i can store every requirement array
 var passwordRequirements = {
 numbers: ["1","2","3","4","5","6","7","8","9"],
@@ -18,6 +19,7 @@ lowerCase:["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","
 }
 
 console.log(passwordRequirements);
+console.log(passwordRequirements.numbers.length);
 
 
 // Write password to the #password input
@@ -38,21 +40,44 @@ function generatePassword(){
     console.log(passwordLength);
     //ask user if they like special characters,numbers,lowcase,and uppercase
     var booleanNum = userChoiceBoolean("Numbers");
+    var booleanChar = userChoiceBoolean("Special Characters");
     var booleanUpper = userChoiceBoolean("Uppercase Letters");
     var booleanLower = userChoiceBoolean("Lowercase Letters");
-    var booleanChar = userChoiceBoolean("Special Characters");
-    console.log(booleanNum);
-    console.log(booleanUpper);
-    console.log(booleanLower);
-    console.log(booleanChar);
+
+    //put the password together using while 
+    for(var x = 0; x <= passwordLength; x++){
+      var randomOrder = Math.floor(Math.random() * Object.keys(passwordRequirements).length);
+      switch (randomOrder) {
+        case 0://numbers
+        strongPassword = checkUserChoices(passwordRequirements.numbers, booleanNum);
+          break;
+        case 1://char
+        strongPassword = checkUserChoices(passwordRequirements.characters, booleanChar);
+          break;
+        case 2://upperCase
+        strongPassword = checkUserChoices(passwordRequirements.upperCase, booleanUpper);
+          break;
+        case 3://lowerCase
+        strongPassword = checkUserChoices(passwordRequirements.lowerCase, booleanLower);
+          break;  
+      }
+    }
 
       
   }
 
-//function assk user if they like num, uppercase , lowercase, char
+//function ask user if they like num, uppercase , lowercase, char
 function userChoiceBoolean(textHolder){
   var choice =  confirm("Would you like " + textHolder);
   return choice;
+}
+
+//function check if they picked num , low, upper , char
+function checkUserChoices(array, bool){
+  if (bool){
+    var randOrder = Math.floor(Math.random() * array.length);//creates random number to pick random value with in array
+    return strongPassword + array[randOrder]; //adds num,char, low or upper to strong password
+  }
 }
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);

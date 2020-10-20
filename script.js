@@ -2,8 +2,7 @@
 var generateBtn = document.querySelector("#generate");
 
 // global variables 
-var strongPassword = "";
-console.log(strongPassword.length)
+
 // object that i can store every requirement array
 var passwordRequirements = {
 numbers: ["1","2","3","4","5","6","7","8","9"],
@@ -21,9 +20,10 @@ lowerCase:["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","
 
 // Write password to the #password input
 function writePassword() {
+
+
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-
   passwordText.value = password;
 
 }
@@ -41,21 +41,22 @@ function generatePassword(){
     var booleanUpper = userChoiceBoolean("Uppercase Letters");
     var booleanLower = userChoiceBoolean("Lowercase Letters");
 
+    var strongPassword = " ";//store password here then return it 
     //put the password together using while 
     while(strongPassword.length <= passwordLength){
       var randomOrder = Math.floor(Math.random() * Object.keys(passwordRequirements).length);
       switch (randomOrder) {
         case 0://numbers
-        strongPassword = checkUserChoices(passwordRequirements.numbers, booleanNum);
+        strongPassword = checkUserChoices(passwordRequirements.numbers, booleanNum, strongPassword);
           break;
         case 1://char
-        strongPassword = checkUserChoices(passwordRequirements.characters, booleanChar);
+        strongPassword = checkUserChoices(passwordRequirements.characters, booleanChar, strongPassword);
           break;
         case 2://upperCase
-        strongPassword = checkUserChoices(passwordRequirements.upperCase, booleanUpper);
+        strongPassword = checkUserChoices(passwordRequirements.upperCase, booleanUpper,strongPassword);
           break;
         case 3://lowerCase
-        strongPassword = checkUserChoices(passwordRequirements.lowerCase, booleanLower);
+        strongPassword = checkUserChoices(passwordRequirements.lowerCase, booleanLower, strongPassword);
           break;  
       }
     }
@@ -70,7 +71,7 @@ function userChoiceBoolean(textHolder){
 }
 
 //function check if they picked num , low, upper , char
-function checkUserChoices(array, bool ){
+function checkUserChoices(array, bool, strongPassword ){
   if (bool){
     var randOrder = Math.floor(Math.random() * array.length);//creates random number to pick random value with in array
     console.log(strongPassword + array[randOrder]);

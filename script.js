@@ -35,10 +35,25 @@ function generatePassword(){
     while(passwordLength >= 128 || passwordLength <= 8){
       passwordLength= parseInt(prompt("How long would you like your password to be from 8 to 128?"));
     }
-  
+    console.log(passwordLength);
+    //ask user if they like special characters,numbers,lowcase,and uppercase
+    var booleanNum = userChoiceBoolean("Numbers");
+    var booleanUpper = userChoiceBoolean("Uppercase Letters");
+    var booleanLower = userChoiceBoolean("Lowercase Letters");
+    var booleanChar = userChoiceBoolean("Special Characters");
+    console.log(booleanNum);
+    console.log(booleanUpper);
+    console.log(booleanLower);
+    console.log(booleanChar);
+
+      
+  }
+
+//function assk user if they like num, uppercase , lowercase, char
+function userChoiceBoolean(textHolder){
+  var choice =  confirm("Would you like " + textHolder);
+  return choice;
 }
-
-
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 

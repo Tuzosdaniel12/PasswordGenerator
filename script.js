@@ -13,8 +13,8 @@ characters:["!","#","$","&","(",
             "@","[","","]","^",
             "_","`","{","|","}",
             "~", "\/"],
-upperCase:[],
-lowerCase:[]
+upperCase:["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"],
+lowerCase:["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
 }
 
 console.log(passwordRequirements);
@@ -28,6 +28,18 @@ function writePassword() {
   passwordText.value = password;
 
 }
+//ask user for password requirements
+function generatePassword(){
+  var passwordLength= parseInt(prompt("How long would you like your password to be from 8 to 128?"));
+    //Make sure that the user doesn't go over 128 character
+    while(passwordLength >= 128 || passwordLength <= 8){
+      passwordLength= parseInt(prompt("How long would you like your password to be from 8 to 128?"));
+    }
+  
+}
+
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+

@@ -51,4 +51,8 @@ THEN the password is either displayed in an alert or written to the page
 ## JavaScript-Images
 
 ## Links
+* Website
+    * https://tuzosdaniel12.github.io/PasswordGenerator/
+* Repo
+    * https://github.com/Tuzosdaniel12/PasswordGenerator
 

@@ -6,6 +6,7 @@
 * [Acceptance Criteria](#Acceptance-Criteria)
 * [Process](#Process)
 * [JavaScript Images](#JavaScript-Images)
+* [Website Example](#Website-Example)
 * [Links](#Links)
 
 ## Links
@@ -63,6 +64,10 @@ THEN the password is either displayed in an alert or written to the page
 ![JS](https://github.com/Tuzosdaniel12/PasswordGenerator/blob/main/Assets/images/js-01.png)
 ![JS](https://github.com/Tuzosdaniel12/PasswordGenerator/blob/main/Assets/images/js-02.png)
 ![JS](https://github.com/Tuzosdaniel12/PasswordGenerator/blob/main/Assets/images/js-03.png)
+
+
+## Website-Example
+![SITE](https://github.com/Tuzosdaniel12/PasswordGenerator/blob/main/Assets/images/Password-Generator.png)
 
 ## Links
 * Website

@@ -47,6 +47,17 @@ WHEN the password is generated
 THEN the password is either displayed in an alert or written to the page
 ```
 ## Process
+* Started creating an object that contain four arrays for , uppercase, lower case, numbers and characters
+* Continue with creating function to generatePassword
+* inside of function generatePassword, I asked for all the acceptance criteria
+    * [Acceptance Criteria](#Acceptance-Criteria)
+* After asking each question I did make sure that length of the   had be eight or more, again aby password under 6 characters can be liable 
+* Created a random variable to have a random order of the choices the users asked for 
+* I a created a switch statement to send each array, store in the global object I created, so it can call a function to check if it was one of the users choice.
+    * If not a choice it would return the password as it was . 
+    * if it was choice it would store new character to password.
+* To test the program I used various console logs to make sure code was working and to see where my logic was faulty
+    * Example I move variables to functions so the password could reset when ever pressing button 
 
 ## JavaScript-Images
 

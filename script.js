@@ -32,7 +32,7 @@ function writePassword() {
 function generatePassword(){
   var passwordLength= parseInt(prompt("How long would you like your password to be from " + minLength + " to " + maxLength + "?"));
     //Make sure that the user doesn't go over 128 character
-    while(passwordLength >= 128 || passwordLength < 8){
+    while(passwordLength > 128 || passwordLength < 8){
       passwordLength= parseInt(prompt("How long would you like your password to be from " + minLength + " to " + maxLength + "?"));
     }
 

@@ -2,6 +2,8 @@
 var generateBtn = document.querySelector("#generate");
 
 // global variables 
+var maxLength = 128;
+var minLength = 8;
 
 // object that i can store every requirement array
 var passwordRequirements = {
@@ -28,10 +30,10 @@ function writePassword() {
 }
 //ask user for password requirements
 function generatePassword(){
-  var passwordLength= parseInt(prompt("How long would you like your password to be from 8 to 128?"));
+  var passwordLength= parseInt(prompt("How long would you like your password to be from " + minLength + " to " + maxLength + "?"));
     //Make sure that the user doesn't go over 128 character
-    while(passwordLength >= 128 || passwordLength <= 8){
-      passwordLength= parseInt(prompt("How long would you like your password to be from 8 to 128?"));
+    while(passwordLength >= 128 || passwordLength < 8){
+      passwordLength= parseInt(prompt("How long would you like your password to be from " + minLength + " to " + maxLength + "?"));
     }
 
     //ask user if they like special characters,numbers,lowcase,and uppercase

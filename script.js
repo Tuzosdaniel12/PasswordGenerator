@@ -30,10 +30,12 @@ function writePassword() {
 }
 //ask user for password requirements
 function generatePassword(){
+  var strongPassword = "";//store password here then return it 
   var passwordLength= parseInt(prompt("How long would you like your password to be from " + minLength + " to " + maxLength + "?"));
     //Make sure that the user doesn't go over 128 character
-    while(passwordLength > maxLength || passwordLength < minLength){
-      passwordLength= parseInt(prompt("Provide a correct length between " + minLength + " to " + maxLength + "?"));
+    if(!(minLength <= passwordLength && passwordLength <= maxLength)){
+      alert("Provide a correct length between " + minLength + " to " + maxLength + "?");
+      return strongPassword;
     }
 
     //ask user if they like special characters,numbers,lowcase,and uppercase
@@ -45,11 +47,11 @@ function generatePassword(){
     //console.log(boolChar)
     //console.log(boolUpper)
     //console.log(boolLower)
-    var strongPassword = "";//store password here then return it 
+    
 
     //added this option ilearned from class activities, so I have one true at lease
     if (booleanNum === false && booleanChar === false && booleanUpper === false && booleanLower === false){
-      alert("must pick an option, you must start again");
+      alert("Must pick an option, you must start again");
       return strongPassword;
     }
     else{ 

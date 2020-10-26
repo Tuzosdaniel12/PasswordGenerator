@@ -49,8 +49,8 @@ function generatePassword(){
     //console.log(boolLower)
     
 
-    //added this option ilearned from class activities, so I have one true at lease
-    if (booleanNum === false && booleanChar === false && booleanUpper === false && booleanLower === false){
+    //added this option i learned from class activities, so I have one true at lease
+    if (!(booleanNum && booleanChar && booleanUpper && booleanLower)){
       alert("Must pick an option, you must start again");
       return strongPassword;
     }

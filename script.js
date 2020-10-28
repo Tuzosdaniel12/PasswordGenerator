@@ -22,7 +22,7 @@ lowerCase:["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","
 
 // Write password to the #password input
 function writePassword() {
-
+  
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
@@ -50,7 +50,7 @@ function generatePassword(){
     
 
     //added this option i learned from class activities, so I have one true at lease
-    if (!(booleanNum && booleanChar && booleanUpper && booleanLower)){
+    if ((!booleanNum && !booleanChar && !booleanUpper && !booleanLower)){
       alert("Must pick an option, you must start again");
       return strongPassword;
     }
@@ -75,6 +75,7 @@ function generatePassword(){
         }
       }
         //console.log(strongPassword); for de bug
+        
       return strongPassword;
   }
   }
